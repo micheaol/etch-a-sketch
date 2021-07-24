@@ -33,11 +33,22 @@ mainGrid.insertBefore(sixthDiv, fiftDiv);
 
 
 //Add event listener
-mainGrid.addEventListener('mouseover', mouseEnter);
+firstDiv.addEventListener('mouseover', mouseEnter);
+secondDiv.addEventListener('mouseenter', mouseEnterSec);
+secondDiv.addEventListener('mouseout', mouseOut);
+
+function mouseOut(e) {
+    secondDiv.style.backgroundColor = 'white';
+}
+
+function mouseEnterSec(e) {
+    secondDiv.style.backgroundColor = 'rgb(25,10, 255)';
+}
 
 function mouseEnter(e) {
     // console.log(e.type);
-    mainGrid.style.backgroundColor = 'rgb(0, 191, 255)';
+    firstDiv.style.backgroundColor = 'rgb(0, 191, 255)';
+
 }
 
 // console.log(mainGrid.children);
