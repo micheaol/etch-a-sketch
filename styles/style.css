@@ -8,6 +8,10 @@
     --border: #222;
 }
 
+body {
+    background-color: gray;
+}
+
 .main-header {
     text-align: center;
     margin-top: 20px;
@@ -24,7 +28,7 @@
 .buttons {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-evenly; */
     flex-wrap: wrap;
     width: calc(75vw + 40px);
 }
@@ -32,4 +36,10 @@
 .grid-element {
     border: 1px solid var(--border);
     background-color: var(--background);
+}
+
+#change-size {
+    float: right;
+    margin-left: 100px;
+    margin-right: 75px;
 }

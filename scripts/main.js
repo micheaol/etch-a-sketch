@@ -2,6 +2,7 @@
 const mainGrid = document.getElementById('main-grid');
 const container = document.getElementById('main-container');
 const changeSize = document.getElementById('change-size');
+const clearBtn = document.getElementById('clear-btn')
 
 //function to create grids
 function createGrid(gridNumber) {
@@ -31,6 +32,9 @@ function gridColor(e) {
 //Add event to the change size button
 changeSize.addEventListener('click', changeGrid);
 
+//add even to clear button:
+clearBtn.addEventListener('click', resetButton);
+
 //Create function for changing grid:
 function changeGrid() {
     let newGrid = prompt("Enter new size: ")
@@ -45,7 +49,11 @@ function changeGrid() {
         }
     }
 }
-
+//Clear function:
+function resetButton(e) {
+    clearGrid();
+    createGrid(5);
+}
 //function to clear grid nodes:
 function clearGrid() {
     const gridArray = Array.from(mainGrid.childNodes);
