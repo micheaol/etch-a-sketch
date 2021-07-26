@@ -1,6 +1,7 @@
 //get the DOM element:
 const mainGrid = document.getElementById('main-grid');
 const container = document.getElementById('main-container');
+const changeSize = document.getElementById('change-size');
 
 //function to create grids
 function createGrid(gridNumber) {
@@ -8,7 +9,7 @@ function createGrid(gridNumber) {
     for (let i = 0; i <= gridArea; i++) {
         let gridItem = document.createElement('div');
         gridItem.className = "grid-element";
-        gridItem.style.backgroundColor = 'yellow'; //For a test..........
+        // gridItem.style.backgroundColor = 'yellow'; //For a test..........
         mainGrid.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
         mainGrid.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`;
         mainGrid.insertAdjacentElement('beforeend', gridItem);
@@ -20,8 +21,38 @@ function createGrid(gridNumber) {
 }
 
 //create Grid Color function:
-function gridColor(params) {
-
+function gridColor(e) {
+    let colorR = Math.floor(Math.random() * 256);
+    let colorG = Math.floor(Math.random() * 256);
+    let colorB = Math.floor(Math.random() * 256);
+    e.target.style.backgroundColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
 }
 
-createGrid(10);
+//Add event to the change size button
+changeSize.addEventListener('click', changeGrid);
+
+//Create function for changing grid:
+function changeGrid() {
+    let newGrid = prompt("Enter new size: ")
+    if (newGrid !== null) {
+        newGrid = parseInt(newGrid);
+        if (newGrid < 1 || newGrid > 64 || Number.isNaN(newGrid)) {
+            alert("Enter a number from 1-64 range");
+            changeGrid();
+        } else {
+            clearGrid();
+            createGrid(newGrid);
+        }
+    }
+}
+
+//function to clear grid nodes:
+function clearGrid() {
+    const gridArray = Array.from(mainGrid.childNodes);
+    gridArray.forEach((element) => {
+        mainGrid.removeChild(element);
+    });
+}
+
+//calling grid creation function
+createGrid(5);

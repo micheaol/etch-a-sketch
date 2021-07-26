@@ -1,6 +1,11 @@
-* {
-    border: 0;
-    margin: 0;
+:root {
+    --title: #333;
+    --background: #ededed;
+    --button-border: #333;
+    --button: #555;
+    --button-hover: #444;
+    --button-active: #333;
+    --border: #222;
 }
 
 .main-header {
@@ -8,12 +13,12 @@
     margin-top: 20px;
 }
 
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: center;
+.grid {
+    display: grid;
+    max-width: 500px;
+    min-height: 500px;
+    margin: 2rem auto;
+    border: 2px solid var(--border);
 }
 
 .buttons {
@@ -22,4 +27,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: calc(75vw + 40px);
+}
+
+.grid-element {
+    border: 1px solid var(--border);
+    background-color: var(--background);
 }
