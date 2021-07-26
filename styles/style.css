@@ -10,6 +10,7 @@
 
 body {
     background-color: gray;
+    font-family: "Roboto", sans-serif;
 }
 
 .main-header {
@@ -40,6 +41,12 @@ body {
 
 #change-size {
     float: right;
-    margin-left: 100px;
+    margin-left: 30%;
     margin-right: 75px;
+    margin-top: 10px;
+}
+
+#clear-btn {
+    margin-left: 10%;
+    margin-top: 10px;
 }
