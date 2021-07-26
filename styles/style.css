@@ -29,7 +29,6 @@ body {
 .buttons {
     align-items: center;
     display: flex;
-    /* justify-content: space-evenly; */
     flex-wrap: wrap;
     width: calc(75vw + 40px);
 }
