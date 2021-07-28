@@ -1,2 +1,3 @@
 New Theodin project
-New theOdin project
+The is a correction to practise nano
+Hello world
